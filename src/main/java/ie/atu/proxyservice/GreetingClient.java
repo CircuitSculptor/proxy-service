@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.PathVariable;
         url = "${greeting.service.base-url}"
 )
 
-public class GreetingClient {
+public interface GreetingClient {
 
     @GetMapping("api/greet/{name}")
     String call_greet(@PathVariable String name);
