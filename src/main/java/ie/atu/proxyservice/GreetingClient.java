@@ -6,11 +6,11 @@ import org.springframework.web.bind.annotation.PathVariable;
 
 @FeignClient(
         name = "greetingClient",
-        url = "${greeting.service.base-url}"
+        url = "${greeting.service.base.url}"
 )
 
 public interface GreetingClient {
 
-    @GetMapping("api/greet/{name}")
+    @GetMapping("/api/greet/{name}")
     String call_greet(@PathVariable String name);
 }
