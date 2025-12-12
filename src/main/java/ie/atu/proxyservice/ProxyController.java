@@ -15,7 +15,7 @@ public class ProxyController {
         this.greetingClient = greetingClient;
     }
 
-    @GetMapping("api/proxy-greet/{name}")
+    @GetMapping("/api/proxy-greet/{name}")
     public ResponseEntity<String> proxyGreet(@PathVariable("name") String name) {
         String response = greetingClient.call_greet(name);
         return ResponseEntity.status(HttpStatus.OK).body(response);
